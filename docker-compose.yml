@@ -2,18 +2,20 @@ version: '3.4'
 
 services:
   identifier:
-    image: semtech/mu-identifier:1.10.1
+    image: mu-identifier:none
     environment:
       SESSION_COOKIE_SECURE: "on"
     links:
       - dispatcher:dispatcher
   dispatcher:
+    platform: linux/amd64
     image: semtech/mu-dispatcher:2.1.0-beta.2
     links:
       - resource:resource
     volumes:
       - ./config/dispatcher:/config
   database:
+    platform: linux/amd64
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
@@ -22,6 +24,7 @@ services:
       - ./data/db:/data
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
   resource:
+    platform: linux/amd64
     image: semtech/mu-cl-resources:1.22.2
     links:
       - database:database
