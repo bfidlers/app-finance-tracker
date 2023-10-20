@@ -1,1 +1,21 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@font-face {
+    font-display: block;
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../webfonts/RobotoMono-Regular.ttf") format("truetype");
+}
+
+* {
+    font-family: "Roboto Mono";
+}
+
+.error_code {
+    font-size: 20vw;
+    text-align: center;
+}
+
+.error_text {
+    font-size: 4vw;
+    text-align: center;
+}

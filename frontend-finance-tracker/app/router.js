@@ -16,4 +16,6 @@ Router.map(function () {
     this.route('test2');
   });
   this.route('unprotected');
+
+  this.route('404', { path: '/*path' });
 });
