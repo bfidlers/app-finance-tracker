@@ -11,4 +11,6 @@ Router.map(function () {
   this.route('unregister');
   this.route('change-password');
   this.route('login');
+  this.route('protected');
+  this.route('unprotected');
 });
