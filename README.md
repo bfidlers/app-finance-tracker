@@ -18,7 +18,7 @@ You should make a project on your own.  Like really, you. All of it. This means 
 A checkbox for your solution. Let's assume you make duperdap
 
     - [x] has an app-duperdap mu-project
-    - [ ] has a frontend-duperdap frontend in EmberJS
+    - [x] has a frontend-duperdap frontend in EmberJS
     - [ ] uses ember-data in the frontend
     - [ ] uses omnipresent microservices:
       - [x] identifier
