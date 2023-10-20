@@ -25,6 +25,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://registration/accounts/"
   end
 
+  match "/sessions/*path", @any do
+    Proxy.forward conn, path, "http://login/sessions/"
+  end
+
 
   match "/*_", %{ layer: :not_found } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )

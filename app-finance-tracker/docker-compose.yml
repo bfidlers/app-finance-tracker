@@ -35,3 +35,8 @@ services:
     image: semtech/mu-registration-service:2.7.3
     links:
       - database:database
+  login:
+    platform: linux/amd64
+    image: semtech/mu-login-service:3.0.0
+    links:
+      - database:database
