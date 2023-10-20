@@ -30,3 +30,8 @@ services:
       - database:database
     volumes:
       - ./config/resources:/config
+  registration:
+    platform: linux/amd64
+    image: semtech/mu-registration-service:2.7.3
+    links:
+      - database:database
