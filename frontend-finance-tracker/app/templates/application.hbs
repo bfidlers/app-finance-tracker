@@ -1,7 +1,9 @@
 {{page-title "FrontendFinanceTracker"}}
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<h2 id="title">My Application</h2>
+
+<LinkTo @route='register' class="button">Register</LinkTo>
+<LinkTo @route='unregister' class="button">Unregister</LinkTo>
+<LinkTo @route='change-password' class="button">Change Password</LinkTo>
 
 {{outlet}}
