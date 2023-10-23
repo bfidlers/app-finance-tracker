@@ -12,20 +12,15 @@
     </div>
 
     <div class="settings">
-        {{!-- {{#if this.session.isAuthenticated}}
-        console.log("test")
+        {{#if @auth}}
         <MuLogout />
+        <LinkTo @route="authenticated.settings" class="menu-link">
+            Settings
+        </LinkTo>
         {{else}}
         <LinkTo @route="login" class="menu-link">
             Login
         </LinkTo>
-        {{/if}} --}}
-        <LinkTo @route="login" class="menu-link">
-            Login
-        </LinkTo>
-
-        <LinkTo @route="authenticated.settings" class="menu-link">
-            Settings
-        </LinkTo>
+        {{/if}}
     </div>
 </nav>

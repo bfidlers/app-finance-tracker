@@ -1,5 +1,5 @@
 {{page-title "FrontendFinanceTracker"}}
-<NavBar />
+<NavBar @auth={{this.session.isAuthenticated}} />
 
 <div class="container">
     <h2 id="title">My Application</h2>
