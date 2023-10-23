@@ -54,6 +54,15 @@
     font-weight: bold;
 }
 
+.menu .logout {
+    display: inline-block;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /* .menu a:hover {
     background-color: #ddd;
     color: black;
@@ -64,7 +73,6 @@
  */
 .body {
     padding: 50px;
-
 }
 
 /**
