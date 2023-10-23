@@ -1,15 +1,10 @@
 {{page-title "FrontendFinanceTracker"}}
+<NavBar />
 
-<h2 id="title">My Application</h2>
+<div class="container">
+    <h2 id="title">My Application</h2>
 
-{{#if this.session.isAuthenticated}}
-<MuLogout />
-{{else}}
-<MuLogin />
-{{/if}}
-
-<LinkTo @route='register' class="button">Register</LinkTo>
-<LinkTo @route='unregister' class="button">Unregister</LinkTo>
-<LinkTo @route='change-password' class="button">Change Password</LinkTo>
-
-{{outlet}}
+    <body>
+        {{outlet}}
+    </body>
+</div>

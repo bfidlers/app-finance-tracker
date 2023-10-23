@@ -8,7 +8,85 @@
 
 * {
     font-family: "Roboto Mono";
+    margin: 0;
+    padding: 0;
 }
+
+.container {
+    margin: 25px;
+}
+
+/**
+ * Top Navigation
+ */
+
+.menu {
+    position: relative;
+    height: 4em;
+    background-color: #225812;
+}
+
+.menu h1 {
+    position: relative;
+    padding: 5px 0 0 8px;
+    color: #f9f9f9;
+    font-size: 1.8em;
+}
+
+.menu a,
+.menu .links {
+    display: inline-block;
+}
+
+.menu .settings {
+    display: inline-block;
+
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* .menu a:hover {
+    background-color: #ddd;
+    color: black;
+} */
+
+/**
+ * Content area
+ */
+.body {
+    padding: 50px;
+
+}
+
+/**
+ * Table styles
+ */
+
+.row {
+    display: flex;
+}
+
+.col-md-6 {
+    flex: 50%;
+    text-align: center;
+}
+
+.border-right {
+    border-right: 1px solid black;
+}
+
+/**
+ * Error pages
+ */
 
 .error_code {
     font-size: 20vw;
