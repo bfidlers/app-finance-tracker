@@ -23,3 +23,7 @@
 
 # broccoli-debug
 /DEBUG/
+
+
+# exclude tests for now
+/tests/
