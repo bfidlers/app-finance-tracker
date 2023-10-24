@@ -24,8 +24,7 @@ services:
       - ./data/db:/data
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
   resource:
-    platform: linux/amd64
-    image: semtech/mu-cl-resources:1.22.2
+    image: semtech/mu-cl-resources:feature-arm64-builds
     links:
       - database:database
     volumes:
