@@ -1,0 +1,26 @@
+{{page-title "Expenses"}}
+<ul>
+    {{#each @model as |expense|}}
+    <li>
+        {{expense.name}} <small>{{expense.amount}}</small>
+        <button type="button" {{on "click" (fn this.removeExpense expense)}}>Remove</button>
+    </li>
+    {{/each}}
+</ul>
+
+<hr />
+<form {{on "submit" this.createExpense}}>
+    <dl>
+        <dt>Expense name</dt>
+        <dd>
+            <Input @value={{this.newName}} />
+        </dd>
+        <dt>Amount</dt>
+        <dd>
+            <Input @value={{this.newAmount}} />
+        </dd>
+    </dl>
+    <button type="submit">Create</button>
+</form>
+
+{{outlet}}
