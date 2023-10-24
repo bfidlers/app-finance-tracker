@@ -1,0 +1,22 @@
+{{page-title "Authors"}}
+<ul>
+    {{#each @model as |author|}}
+    <li>
+        {{author.name}}
+        <button type="button" {{on "click" (fn this.removeAuthor author)}}>Remove</button>
+    </li>
+    {{/each}}
+</ul>
+
+<hr />
+<form {{on "submit" this.addAuthor}}>
+    <dl>
+        <dt>Author Name</dt>
+        <dd>
+            <Input @value={{this.newAuthor}} placeholder="Daniel Kahneman" />
+        </dd>
+    </dl>
+    <button type="submit">Create</button>
+</form>
+
+{{outlet}}
