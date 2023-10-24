@@ -17,6 +17,8 @@ Router.map(function () {
     this.route('test2');
   });
   this.route('unprotected');
+  this.route('books');
+  this.route('authors');
 
   this.route('404', { path: '/*path' });
 });

@@ -1,19 +1,19 @@
 @font-face {
-    font-display: block;
-    font-family: "Roboto Mono";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../webfonts/RobotoMono-Regular.ttf") format("truetype");
+  font-display: block;
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/RobotoMono-Regular.ttf") format("truetype");
 }
 
 * {
-    font-family: "Roboto Mono";
-    margin: 0;
-    padding: 0;
+  font-family: "Roboto Mono";
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    margin: 25px;
+  margin: 25px;
 }
 
 /**
@@ -21,48 +21,45 @@
  */
 
 .menu {
-    position: relative;
-    height: 4em;
-    background-color: #225812;
+  position: relative;
+  height: 4em;
+  background-color: #225812;
 }
 
 .menu h1 {
-    position: relative;
-    padding: 5px 0 0 8px;
-    color: #f9f9f9;
-    font-size: 1.8em;
+  position: relative;
+  padding: 5px 0 0 8px;
+  color: #f9f9f9;
+  font-size: 1.8em;
 }
 
 .menu a,
 .menu .links {
-    display: inline-block;
+  display: inline-block;
 }
 
 .menu .settings {
-    display: inline-block;
-
-    position: absolute;
-    bottom: 15px;
-    right: 0;
+  display: inline-block;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
 }
 
 .menu a {
-    text-decoration: none;
-    padding: 0 15px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
+  text-decoration: none;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .menu .logout {
-    display: inline-block;
-
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-
-    cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* .menu a:hover {
@@ -74,7 +71,7 @@
  * Content area
  */
 .body {
-    padding: 50px;
+  padding: 50px;
 }
 
 /**
@@ -82,16 +79,16 @@
  */
 
 .row {
-    display: flex;
+  display: flex;
 }
 
 .col-md-6 {
-    flex: 50%;
-    text-align: center;
+  flex: 50%;
+  text-align: center;
 }
 
 .border-right {
-    border-right: 1px solid black;
+  border-right: 1px solid black;
 }
 
 /**
@@ -99,11 +96,11 @@
  */
 
 .error_code {
-    font-size: 20vw;
-    text-align: center;
+  font-size: 20vw;
+  text-align: center;
 }
 
 .error_text {
-    font-size: 4vw;
-    text-align: center;
+  font-size: 4vw;
+  text-align: center;
 }

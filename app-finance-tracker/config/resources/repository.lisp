@@ -31,4 +31,7 @@
 ;; the mu.semte.ch organisation indicates that it will not be used
 ;; by them and that it shouldn't be used for permanent URIs.
 
+(add-prefix "dcterms" "http://purl.org/dc/terms/")
+(add-prefix "schema" "http://schema.org/")
+
 (add-prefix "ext" "http://mu.semte.ch/vocabularies/ext/")
