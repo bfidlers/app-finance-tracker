@@ -27,6 +27,12 @@
   :resource-base (s-url "http://mu.semte.ch/services/github/madnificent/book-service/authors/")
 :on-path "authors")
 
+(define-resource expense ()
+  :class (s-prefix "ext:Expense")
+  :properties `((:name :string ,(s-prefix "ext:name"))
+                (:amount :integer ,(s-prefix "ext:amount")))
+  :resource-base (s-url "http://mu.semte.ch/services/github/madnificent/book-service/expenses/")
+:on-path "expenses")
 
 ;; reading in the domain.json
 (read-domain-file "domain.json")

@@ -19,6 +19,7 @@ Router.map(function () {
   this.route('unprotected');
   this.route('books');
   this.route('authors');
+  this.route('expenses');
 
   this.route('404', { path: '/*path' });
 });
