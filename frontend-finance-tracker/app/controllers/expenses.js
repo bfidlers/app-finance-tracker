@@ -9,7 +9,8 @@ export default class ExpensesController extends Controller {
   @tracked date = this.currentdate();
   @tracked description = '';
   @tracked category = '';
-  @tracked paymentMethod = '';
+  @tracked paymentMethod = 'kaart';
+  paymentMethods = ["kaart", "cash"];
   @tracked currency = 'EUR';
   @tracked location = '';
 
@@ -55,5 +56,10 @@ export default class ExpensesController extends Controller {
   currentdate() {
     let date = new Date();
     return date.toISOString().substring(0, 10);
+  }
+
+  @action
+  setPaymentMethod(method) {
+    this.paymentMethod = method;
   }
 }
