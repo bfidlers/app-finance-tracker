@@ -36,14 +36,10 @@ export default class ExpensesController extends Controller {
     await expense.save();
 
     // clear the input fields
-    this.newName = '';
-    this.newAmount = '';
     this.name = '';
     this.amount = '';
-    this.date = '';
     this.description = '';
     this.category = '';
-    this.paymentMethod = '';
     this.location = '';
   }
 
