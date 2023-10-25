@@ -1,4 +1,4 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class UseraccountModel extends Model {
   @attr('string') accountname;
@@ -7,4 +7,6 @@ export default class UseraccountModel extends Model {
   @attr('string') status;
   @attr('date') created;
   @attr('date') modified;
+
+  @belongsTo('user', { async: true, inverse: 'accounts' }) user;
 }

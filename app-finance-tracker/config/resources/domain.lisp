@@ -39,6 +39,8 @@
   :properties `((:name :string ,(s-prefix "foaf:name"))
                 (:created :dateTime ,(s-prefix "dct:created"))
                 (:modified :dateTime ,(s-prefix "dct:modified")))
+  :has-many `((useraccount :via ,(s-prefix "foaf:account")
+               :as "accounts"))
   :resource-base (s-url "http://mu.semte.ch/services/registration-service/users/")
 :on-path "users")
 
@@ -50,6 +52,9 @@
                 (:status :url ,(s-prefix "account:status"))
                 (:created :dateTime ,(s-prefix "dct:created"))
                 (:modified :dateTime ,(s-prefix "dct:modified")))
+  :has-one `((user :via ,(s-prefix "foaf:account")
+              :inverse t
+              :as "user"))
   :resource-base (s-url "http://mu.semte.ch/services/registration-service/accounts/")
 :on-path "useraccounts")
 
