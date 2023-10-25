@@ -27,13 +27,6 @@
   :resource-base (s-url "http://mu.semte.ch/services/github/madnificent/book-service/authors/")
 :on-path "authors")
 
-(define-resource expense ()
-  :class (s-prefix "ext:Expense")
-  :properties `((:name :string ,(s-prefix "ext:name"))
-                (:amount :integer ,(s-prefix "ext:amount")))
-  :resource-base (s-url "http://mu.semte.ch/services/github/madnificent/book-service/expenses/")
-:on-path "expenses")
-
 (define-resource user ()
   :class (s-prefix "foaf:Person")
   :properties `((:name :string ,(s-prefix "foaf:name"))
@@ -59,6 +52,21 @@
               :as "user"))
   :resource-base (s-url "http://mu.semte.ch/services/registration-service/accounts/")
 :on-path "useraccounts")
+
+(define-resource expense ()
+  :class (s-prefix "ext:Expense")
+  :properties `((:name :string ,(s-prefix "ext:name"))
+                (:amount :float ,(s-prefix "ext:amount"))
+                (:date :date ,(s-prefix "ext:date"))
+                (:description :string ,(s-prefix "ext:description"))
+                (:category :string ,(s-prefix "ext:category"))
+                (:payment-method :string ,(s-prefix "ext:paymentMethod"))
+                (:currency :string ,(s-prefix "ext:currency"))
+                (:location :string ,(s-prefix "ext:location"))
+                (:created :dateTime ,(s-prefix "dct:created"))
+                (:modified :dateTime ,(s-prefix "dct:modified")))
+  :resource-base (s-url "http://finance-tracker/expenses/")
+:on-path "expenses")
 
 ;; reading in the domain.json
 (read-domain-file "domain.json")

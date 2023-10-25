@@ -4,25 +4,46 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class ExpensesController extends Controller {
-  @tracked newName = '';
-  @tracked newAmount = '';
+  @tracked name = '';
+  @tracked amount = '';
+  @tracked date = '';
+  @tracked description = '';
+  @tracked category = '';
+  @tracked paymentMethod = '';
+  @tracked currency = 'EUR';
+  @tracked location = '';
 
   @service store;
 
   @action
-  createExpense(event) {
+  async createExpense(event) {
     event.preventDefault();
 
     //create the new expense
     let expense = this.store.createRecord('expense', {
-      name: this.newName,
-      amount: this.newAmount,
+      name: this.name,
+      amount: this.amount,
+      date: this.date,
+      description: this.description,
+      category: this.category,
+      paymentMethod: this.paymentMethod,
+      currency: this.currency,
+      location: this.location,
+      created: new Date().toISOString(),
+      modified: new Date().toISOString()
     });
-    expense.save();
+    await expense.save();
 
     // clear the input fields
     this.newName = '';
     this.newAmount = '';
+    this.name = '';
+    this.amount = '';
+    this.date = '';
+    this.description = '';
+    this.category = '';
+    this.paymentMethod = '';
+    this.location = '';
   }
 
   @action
