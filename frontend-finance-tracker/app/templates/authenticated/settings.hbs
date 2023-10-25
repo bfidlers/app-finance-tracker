@@ -1,11 +1,31 @@
-<div>Future settings page</div>
+<h3>Settings to change</h3>
 
-<br />
-<div>Unregister here</div>
-<MuUnregister />
+<form {{on "submit" this.saveChanges}}>
+    <dl>
+        <dt>Name</dt>
+        <dd>
+            <Input @value={{this.name}} placeholder={{@model.user.name}} />
+        </dd>
+        <dt>User name</dt>
+        <dd>
+            <Input @value={{this.accountname}} placeholder={{@model.accountname}} />
+        </dd>
+        <dt>Email address</dt>
+        <dd>
+            <Input @value={{this.email}} placeholder={{@model.email}} />
+        </dd>
+        <dt>Birth date</dt>
+        <dd>
+            <Input @type="date" @value={{this.birthdate}} placeholder={{@model.user.birthdate}} />
+        </dd>
+    </dl>
+    <button type="submit">Save changes</button>
+</form>
 
-<br />
-<div>Change your password below</div>
+<h3>Change your password</h3>
 <MuChangePassword />
+
+<h3>To unregister click below</h3>
+<MuUnregister />
 
 {{outlet}}
