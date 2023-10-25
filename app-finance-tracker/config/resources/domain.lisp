@@ -34,5 +34,24 @@
   :resource-base (s-url "http://mu.semte.ch/services/github/madnificent/book-service/expenses/")
 :on-path "expenses")
 
+(define-resource user ()
+  :class (s-prefix "foaf:Person")
+  :properties `((:name :string ,(s-prefix "foaf:name"))
+                (:created :dateTime ,(s-prefix "dct:created"))
+                (:modified :dateTime ,(s-prefix "dct:modified")))
+  :resource-base (s-url "http://mu.semte.ch/services/registration-service/users/")
+:on-path "users")
+
+(define-resource useraccount ()
+  :class (s-prefix "foaf:OnlineAccount")
+  :properties `((:accountname :string ,(s-prefix "foaf:accountName"))
+                (:password :string ,(s-prefix "account:password"))
+                (:salt :string ,(s-prefix "account:salt"))
+                (:status :url ,(s-prefix "account:status"))
+                (:created :dateTime ,(s-prefix "dct:created"))
+                (:modified :dateTime ,(s-prefix "dct:modified")))
+  :resource-base (s-url "http://mu.semte.ch/services/registration-service/accounts/")
+:on-path "useraccounts")
+
 ;; reading in the domain.json
 (read-domain-file "domain.json")
