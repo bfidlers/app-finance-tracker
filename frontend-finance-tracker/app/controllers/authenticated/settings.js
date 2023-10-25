@@ -7,7 +7,7 @@ export default class SettingsController extends Controller {
     @tracked accountname = '';
     @tracked email = '';
     @tracked name = '';
-    @tracked birthdate = '';
+    @tracked birthdate = this.model.user.get('birthdate');
 
     @service store;
 
@@ -17,7 +17,7 @@ export default class SettingsController extends Controller {
 
         if (this.accountChanged()) {
             // update user account
-            let record1 = this.store.findRecord('useraccount', this.model.id)
+            this.store.findRecord('useraccount', this.model.id)
                 .then((useraccount) => {
                     useraccount.accountname = this.accountname;
                     useraccount.email = this.email;
@@ -25,13 +25,11 @@ export default class SettingsController extends Controller {
 
                     useraccount.save();
                 });
-
-            await record1;
         }
 
         if (this.userChanged()) {
             // update user
-            let record2 = this.store.findRecord('user', this.model.user.get('id'))
+            this.store.findRecord('user', this.model.user.get('id'))
                 .then((user) => {
                     user.name = this.name;
                     user.modified = new Date().toISOString();
@@ -39,15 +37,7 @@ export default class SettingsController extends Controller {
 
                     user.save();
                 });
-
-            await record2;
         }
-
-        // clear the input fields
-        this.accountname = '';
-        this.email = '';
-        this.name = '';
-        this.birthdate = '';
     }
 
     userChanged() {
