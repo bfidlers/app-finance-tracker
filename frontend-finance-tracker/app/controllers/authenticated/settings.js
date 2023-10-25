@@ -15,33 +15,54 @@ export default class SettingsController extends Controller {
     async saveChanges(event) {
         event.preventDefault();
 
-        // update user account
-        let record1 = this.store.findRecord('useraccount', this.model.id)
-            .then((useraccount) => {
-                useraccount.accountname = this.accountname;
-                useraccount.email = this.email;
-                useraccount.modified = new Date().toISOString();
+        if (this.accountChanged()) {
+            // update user account
+            let record1 = this.store.findRecord('useraccount', this.model.id)
+                .then((useraccount) => {
+                    useraccount.accountname = this.accountname;
+                    useraccount.email = this.email;
+                    useraccount.modified = new Date().toISOString();
 
-                useraccount.save();
-            });
+                    useraccount.save();
+                });
 
-        // update user
-        let record2 = this.store.findRecord('user', this.model.user.get('id'))
-            .then((user) => {
-                user.name = this.name;
-                user.modified = new Date().toISOString();
-                user.birthdate = this.birthdate;
+            await record1;
+        }
 
-                user.save();
-            });
+        if (this.userChanged()) {
+            // update user
+            let record2 = this.store.findRecord('user', this.model.user.get('id'))
+                .then((user) => {
+                    user.name = this.name;
+                    user.modified = new Date().toISOString();
+                    user.birthdate = this.birthdate;
 
-        await record1;
-        await record2;
+                    user.save();
+                });
+
+            await record2;
+        }
 
         // clear the input fields
         this.accountname = '';
         this.email = '';
         this.name = '';
         this.birthdate = '';
+    }
+
+    userChanged() {
+        return (this.name != this.model.user.get('name') &&
+            this.name != "") ||
+            (this.birthdate != this.model.user.get('birthdate') &&
+                this.birthdate != "");
+
+
+    }
+
+    accountChanged() {
+        return (this.accountname != this.model.accountname &&
+            this.accountname != "") ||
+            (this.email != this.model.email &&
+                this.email != "");
     }
 }
