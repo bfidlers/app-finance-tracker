@@ -7,6 +7,6 @@ export default class SettingsRoute extends Route {
 
   model() {
     let id = this.session.data.authenticated.data.relationships.account.data.id;
-    return this.store.findRecord('useraccount', id);
+    return this.store.findRecord('useraccount', id, { include: 'user' });
   }
 }
