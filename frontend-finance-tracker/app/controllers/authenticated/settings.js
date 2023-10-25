@@ -19,8 +19,8 @@ export default class SettingsController extends Controller {
             // update user account
             this.store.findRecord('useraccount', this.model.id)
                 .then((useraccount) => {
-                    useraccount.accountname = this.accountname;
-                    useraccount.email = this.email;
+                    useraccount.accountname = this.accountname ? this.accountname : this.model.accountname;
+                    useraccount.email = this.email ? this.email : this.model.email;
                     useraccount.modified = new Date().toISOString();
 
                     useraccount.save();
@@ -31,9 +31,9 @@ export default class SettingsController extends Controller {
             // update user
             this.store.findRecord('user', this.model.user.get('id'))
                 .then((user) => {
-                    user.name = this.name;
+                    user.name = this.name ? this.name : this.model.user.get('name');
+                    user.birthdate = this.birthdate ? this.birthdate : this.model.user.get('birthdate');
                     user.modified = new Date().toISOString();
-                    user.birthdate = this.birthdate;
 
                     user.save();
                 });
