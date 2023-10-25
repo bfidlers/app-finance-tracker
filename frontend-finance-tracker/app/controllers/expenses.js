@@ -4,30 +4,30 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class ExpensesController extends Controller {
-    @tracked newName = '';
-    @tracked newAmount = '';
+  @tracked newName = '';
+  @tracked newAmount = '';
 
-    @service store;
+  @service store;
 
-    @action
-    createExpense(event) {
-        event.preventDefault();
+  @action
+  createExpense(event) {
+    event.preventDefault();
 
-        //create the new expense
-        let expense = this.store.createRecord('expense', {
-            name: this.newName,
-            amount: this.newAmount,
-        });
-        expense.save();
+    //create the new expense
+    let expense = this.store.createRecord('expense', {
+      name: this.newName,
+      amount: this.newAmount,
+    });
+    expense.save();
 
-        // clear the input fields
-        this.newName = '';
-        this.newAmount = '';
-    }
+    // clear the input fields
+    this.newName = '';
+    this.newAmount = '';
+  }
 
-    @action
-    removeExpense(expense, event) {
-        event.preventDefault();
-        expense.destroyRecord();
-    }
+  @action
+  removeExpense(expense, event) {
+    event.preventDefault();
+    expense.destroyRecord();
+  }
 }
