@@ -4,55 +4,58 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class SettingsController extends Controller {
-    @tracked accountname = '';
-    @tracked email = '';
-    @tracked name = '';
-    @tracked birthdate = this.model.user.get('birthdate');
+  @tracked accountname = '';
+  @tracked email = '';
+  @tracked name = '';
+  @tracked birthdate = this.model.user.get('birthdate');
 
-    @service store;
+  @service store;
 
-    @action
-    async saveChanges(event) {
-        event.preventDefault();
+  @action
+  async saveChanges(event) {
+    event.preventDefault();
 
-        if (this.accountChanged()) {
-            // update user account
-            this.store.findRecord('useraccount', this.model.id)
-                .then((useraccount) => {
-                    useraccount.accountname = this.accountname ? this.accountname : this.model.accountname;
-                    useraccount.email = this.email ? this.email : this.model.email;
-                    useraccount.modified = new Date().toISOString();
+    if (this.accountChanged()) {
+      // update user account
+      this.store
+        .findRecord('useraccount', this.model.id)
+        .then((useraccount) => {
+          useraccount.accountname = this.accountname
+            ? this.accountname
+            : this.model.accountname;
+          useraccount.email = this.email ? this.email : this.model.email;
+          useraccount.modified = new Date().toISOString();
 
-                    useraccount.save();
-                });
-        }
-
-        if (this.userChanged()) {
-            // update user
-            this.store.findRecord('user', this.model.user.get('id'))
-                .then((user) => {
-                    user.name = this.name ? this.name : this.model.user.get('name');
-                    user.birthdate = this.birthdate ? this.birthdate : this.model.user.get('birthdate');
-                    user.modified = new Date().toISOString();
-
-                    user.save();
-                });
-        }
+          useraccount.save();
+        });
     }
 
-    userChanged() {
-        return (this.name != this.model.user.get('name') &&
-            this.name != "") ||
-            (this.birthdate != this.model.user.get('birthdate') &&
-                this.birthdate != "");
+    if (this.userChanged()) {
+      // update user
+      this.store.findRecord('user', this.model.user.get('id')).then((user) => {
+        user.name = this.name ? this.name : this.model.user.get('name');
+        user.birthdate = this.birthdate
+          ? this.birthdate
+          : this.model.user.get('birthdate');
+        user.modified = new Date().toISOString();
 
-
+        user.save();
+      });
     }
+  }
 
-    accountChanged() {
-        return (this.accountname != this.model.accountname &&
-            this.accountname != "") ||
-            (this.email != this.model.email &&
-                this.email != "");
-    }
+  userChanged() {
+    return (
+      (this.name != this.model.user.get('name') && this.name != '') ||
+      (this.birthdate != this.model.user.get('birthdate') &&
+        this.birthdate != '')
+    );
+  }
+
+  accountChanged() {
+    return (
+      (this.accountname != this.model.accountname && this.accountname != '') ||
+      (this.email != this.model.email && this.email != '')
+    );
+  }
 }
