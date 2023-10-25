@@ -11,13 +11,37 @@
 <hr />
 <form {{on "submit" this.createExpense}}>
     <dl>
-        <dt>Expense name</dt>
+        <dt>Name</dt>
         <dd>
-            <Input @value={{this.newName}} />
+            <Input @value={{this.name}} />
         </dd>
         <dt>Amount</dt>
         <dd>
-            <Input @value={{this.newAmount}} />
+            <Input @value={{this.amount}} />
+        </dd>
+        <dt>Currency</dt>
+        <dd>
+            <Input @value={{this.currency}} />
+        </dd>
+        <dt>Date</dt>
+        <dd>
+            <Input @type=date @value={{this.date}} />
+        </dd>
+        <dt>Description</dt>
+        <dd>
+            <Textarea @value={{this.description}} />
+        </dd>
+        <dt>Category</dt>
+        <dd>
+            <Input @value={{this.category}} />
+        </dd>
+        <dt>Payment Method</dt>
+        <dd>
+            <Input @value={{this.paymentMethod}} />
+        </dd>
+        <dt>Location</dt>
+        <dd>
+            <Input @value={{this.location}} />
         </dd>
     </dl>
     <button type="submit">Create</button>
