@@ -37,7 +37,8 @@
         </dd>
         <dt>Payment Method</dt>
         <dd>
-            <Input @value={{this.paymentMethod}} />
+            <DropDown @default={{this.paymentMethod}} @options={{this.paymentMethods}}
+                @callback={{this.setPaymentMethod}} />
         </dd>
         <dt>Location</dt>
         <dd>
