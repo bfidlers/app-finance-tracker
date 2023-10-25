@@ -6,7 +6,7 @@ import { inject as service } from '@ember/service';
 export default class ExpensesController extends Controller {
   @tracked name = '';
   @tracked amount = '';
-  @tracked date = '';
+  @tracked date = this.currentdate();
   @tracked description = '';
   @tracked category = '';
   @tracked paymentMethod = '';
@@ -30,7 +30,7 @@ export default class ExpensesController extends Controller {
       currency: this.currency,
       location: this.location,
       created: new Date().toISOString(),
-      modified: new Date().toISOString()
+      modified: new Date().toISOString(),
     });
     await expense.save();
 
@@ -50,5 +50,10 @@ export default class ExpensesController extends Controller {
   removeExpense(expense, event) {
     event.preventDefault();
     expense.destroyRecord();
+  }
+
+  currentdate() {
+    let date = new Date();
+    return date.toISOString().substring(0, 10);
   }
 }
