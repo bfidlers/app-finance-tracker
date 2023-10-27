@@ -1,4 +1,4 @@
-import Model, { attr, belongsTo } from '@ember-data/model';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 
 export default class UseraccountModel extends Model {
   @attr('string') accountname;
@@ -10,4 +10,5 @@ export default class UseraccountModel extends Model {
   @attr('string') email;
 
   @belongsTo('user', { async: true, inverse: 'accounts' }) user;
+  @hasMany('expense', { async: true, inverse: 'user' }) expenses;
 }

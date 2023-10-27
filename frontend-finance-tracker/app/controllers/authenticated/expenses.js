@@ -49,8 +49,8 @@ export default class ExpensesController extends Controller {
     "Miscellaneous"
   ]
 
-
   @service store;
+  @service session;
 
   @action
   async createExpense(event) {
@@ -70,6 +70,14 @@ export default class ExpensesController extends Controller {
       modified: new Date().toISOString(),
     });
     await expense.save();
+
+    let id = this.session.data.authenticated.data.relationships.account.data.id;
+    this.store
+      .findRecord('useraccount', id)
+      .then((useraccount) => {
+        expense.user = useraccount;
+        expense.save();
+      });
 
     // clear the input fields
     this.name = '';
