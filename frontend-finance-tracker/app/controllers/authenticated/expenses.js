@@ -69,7 +69,6 @@ export default class ExpensesController extends Controller {
       created: new Date().toISOString(),
       modified: new Date().toISOString(),
     });
-    await expense.save();
 
     let id = this.session.data.authenticated.data.relationships.account.data.id;
     this.store
