@@ -1,4 +1,8 @@
 alias Acl.Accessibility.Always, as: AlwaysAccessible
+alias Acl.Accessibility.ByQuery, as: AccessByQuery
+alias Acl.GraphSpec.Constraint.Resource.AllPredicates, as: AllPredicates
+alias Acl.GraphSpec.Constraint.Resource.NoPredicates, as: NoPredicates
+alias Acl.GraphSpec.Constraint.ResourceFormat, as: ResourceFormatConstraint
 alias Acl.GraphSpec.Constraint.Resource, as: ResourceConstraint
 alias Acl.GraphSpec, as: GraphSpec
 alias Acl.GroupSpec, as: GroupSpec
@@ -16,7 +20,7 @@ defmodule Acl.UserGroups.Config do
       # // PUBLIC
       %GroupSpec{
         name: "public",
-        useage: [:read],
+        useage: [:read, :write, :read_for_write],
         access: %AlwaysAccessible{},
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/public",
@@ -25,7 +29,8 @@ defmodule Acl.UserGroups.Config do
                         "http://xmlns.com/foaf/0.1/Person",
                         "http://xmlns.com/foaf/0.1/OnlineAccount",
                         "http://mu.semte.ch/vocabularies/ext/Expense",
-                      ]
+                      ],
+                      inverse_predicates: %AllPredicates{}
                     } } ] },
 
       # // CLEANUP
