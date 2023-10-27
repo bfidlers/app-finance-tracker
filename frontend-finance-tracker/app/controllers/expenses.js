@@ -8,11 +8,47 @@ export default class ExpensesController extends Controller {
   @tracked amount = '';
   @tracked date = this.currentdate();
   @tracked description = '';
-  @tracked category = '';
+  @tracked category = 'Miscellaneous';
   @tracked paymentMethod = 'kaart';
-  paymentMethods = ["kaart", "cash"];
   @tracked currency = 'EUR';
   @tracked location = '';
+
+  paymentMethods = [
+    "kaart",
+    "cash"
+  ];
+
+  expenseCategories = [
+    "Groceries",
+    "Dining Out",
+    "Transportation",
+    "Utilities",
+    "Rent/Mortgage",
+    "Healthcare",
+    "Entertainment",
+    "Clothing",
+    "Home Maintenance",
+    "Electronics",
+    "Education",
+    "Insurance",
+    "Gifts",
+    "Donations",
+    "Travel",
+    "Childcare",
+    "Pet Care",
+    "Taxes",
+    "Savings",
+    "Investments",
+    "Fees and Subscriptions",
+    "Personal Care",
+    "Hobbies",
+    "Home Decor",
+    "Office Supplies",
+    "Automotive",
+    "Loans/Debt Repayment",
+    "Miscellaneous"
+  ]
+
 
   @service store;
 
@@ -39,7 +75,6 @@ export default class ExpensesController extends Controller {
     this.name = '';
     this.amount = '';
     this.description = '';
-    this.category = '';
     this.location = '';
   }
 
@@ -57,5 +92,10 @@ export default class ExpensesController extends Controller {
   @action
   setPaymentMethod(method) {
     this.paymentMethod = method;
+  }
+
+  @action
+  setExpenseCategory(category) {
+    this.category = category;
   }
 }
