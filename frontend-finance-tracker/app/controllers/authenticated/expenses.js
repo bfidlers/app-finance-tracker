@@ -61,14 +61,15 @@ export default class ExpensesController extends Controller {
       name: this.name,
       amount: this.amount,
       date: this.date,
-      description: this.description,
       category: this.category,
       paymentMethod: this.paymentMethod,
       currency: this.currency,
-      location: this.location,
       created: new Date().toISOString(),
       modified: new Date().toISOString(),
     });
+
+    if (!this.emptyString(this.description)) expense.description = this.description;
+    if (!this.emptyString(this.location)) expense.location = this.location;
 
     let id = this.session.data.authenticated.data.relationships.account.data.id;
     this.store
@@ -104,5 +105,9 @@ export default class ExpensesController extends Controller {
   @action
   setExpenseCategory(category) {
     this.category = category;
+  }
+
+  emptyString(myString) {
+    return !myString || !myString.trim();
   }
 }
