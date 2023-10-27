@@ -33,7 +33,8 @@
         </dd>
         <dt>Category</dt>
         <dd>
-            <Input @value={{this.category}} />
+            <DropDown @default={{this.category}} @options={{this.expenseCategories}}
+                @callback={{this.setExpenseCategory}} />
         </dd>
         <dt>Payment Method</dt>
         <dd>
