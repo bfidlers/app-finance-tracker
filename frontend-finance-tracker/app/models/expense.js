@@ -1,4 +1,4 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class ExpenseModel extends Model {
   @attr('string') name;
@@ -11,4 +11,6 @@ export default class ExpenseModel extends Model {
   @attr('string') location;
   @attr('string') created;
   @attr('string') modified;
+
+  @belongsTo('useraccount', { async: true, inverse: 'expenses' }) user;
 }

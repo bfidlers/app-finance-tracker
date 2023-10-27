@@ -50,6 +50,8 @@
   :has-one `((user :via ,(s-prefix "foaf:account")
               :inverse t
               :as "user"))
+  :has-many `((expense :via ,(s-prefix "ext:expense")
+               :as "expenses"))
   :resource-base (s-url "http://mu.semte.ch/services/registration-service/accounts/")
 :on-path "useraccounts")
 
@@ -65,6 +67,9 @@
                 (:location :string ,(s-prefix "ext:location"))
                 (:created :dateTime ,(s-prefix "dct:created"))
                 (:modified :dateTime ,(s-prefix "dct:modified")))
+  :has-one `((useraccount :via ,(s-prefix "ext:expense")
+              :inverse t
+              :as "user"))
   :resource-base (s-url "http://finance-tracker/expenses/")
 :on-path "expenses")
 
