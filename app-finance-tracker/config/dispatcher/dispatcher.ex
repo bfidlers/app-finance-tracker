@@ -29,15 +29,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://login/sessions/"
   end
 
-
-  match "/books/*path" do
-    Proxy.forward conn, path, "http://resource/books/"
-  end
-
-  match "/authors/*path" do
-    Proxy.forward conn, path, "http://resource/authors/"
-  end
-
   match "/expenses/*path" do
     Proxy.forward conn, path, "http://resource/expenses/"
   end
