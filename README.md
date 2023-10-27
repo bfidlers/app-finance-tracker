@@ -19,16 +19,16 @@ A checkbox for your solution. Let's assume you make duperdap
 
     - [x] has an app-duperdap mu-project
     - [x] has a frontend-duperdap frontend in EmberJS
-    - [ ] uses ember-data in the frontend
+    - [x] uses ember-data in the frontend
     - [ ] uses omnipresent microservices:
       - [x] identifier
       - [x] dispatcher
-      - [ ] resource
+      - [x] resource
       - [ ] mu-authorization
       - [x] virtuoso
       - [ ] migrations
     - [ ] includes at least one custom microservice
-    - [ ] uses mu-cl-resources for generic API
+    - [x] uses mu-cl-resources for generic API
     - [ ] uses migrations-service for seed data
     - [ ] includes docker-compose.yml that could be used as production setup
     - [ ] includes docker-compose.dev.yml for development overrides (eg: publish port 80 of identifier, 8890 of Virtuoso)
