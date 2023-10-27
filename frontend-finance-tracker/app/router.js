@@ -13,13 +13,13 @@ Router.map(function () {
 
   this.route('authenticated', { path: '' }, function () {
     this.route('settings');
+    this.route('expenses');
     this.route('test1');
     this.route('test2');
   });
   this.route('unprotected');
   this.route('books');
   this.route('authors');
-  this.route('expenses');
 
   this.route('404', { path: '/*path' });
 });
