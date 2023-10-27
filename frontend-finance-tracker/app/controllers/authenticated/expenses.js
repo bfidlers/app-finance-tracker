@@ -71,13 +71,15 @@ export default class ExpensesController extends Controller {
     if (!this.emptyString(this.description)) expense.description = this.description;
     if (!this.emptyString(this.location)) expense.location = this.location;
 
-    let id = this.session.data.authenticated.data.relationships.account.data.id;
-    this.store
-      .findRecord('useraccount', id)
-      .then((useraccount) => {
-        expense.user = useraccount;
-        expense.save();
-      });
+    await expense.save();
+
+    // let id = this.session.data.authenticated.data.relationships.account.data.id;
+    // this.store
+    //   .findRecord('useraccount', id)
+    //   .then((useraccount) => {
+    //     expense.user = useraccount;
+    //     expense.save();
+    //   });
 
     // clear the input fields
     this.name = '';

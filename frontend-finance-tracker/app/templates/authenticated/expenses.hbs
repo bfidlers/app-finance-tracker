@@ -1,6 +1,6 @@
 {{page-title "Expenses"}}
 <ul>
-    {{#each @model.expenses as |expense|}}
+    {{#each @model as |expense|}}
     <li>
         {{expense.name}} <small>{{expense.amount}}</small>
         <button type="button" {{on "click" (fn this.removeExpense expense)}}>Remove</button>
