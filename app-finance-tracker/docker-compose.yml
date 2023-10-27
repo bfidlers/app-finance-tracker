@@ -5,6 +5,7 @@ services:
     image: mu-identifier:none
     environment:
       SESSION_COOKIE_SECURE: "on"
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
     links:
       - dispatcher:dispatcher
   dispatcher:
