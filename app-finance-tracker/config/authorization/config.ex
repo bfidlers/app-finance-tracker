@@ -17,6 +17,21 @@ defmodule Acl.UserGroups.Config do
     # many ways.  The useage of a GroupSpec and GraphCleanup are
     # common.
     [
+      # // Registration + Login Service
+      %GroupSpec{
+        name: "registration",
+        useage: [:read, :write, :read_for_write],
+        access: %AlwaysAccessible{},
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/application",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://xmlns.com/foaf/0.1/Person",
+                        "http://xmlns.com/foaf/0.1/OnlineAccount",
+                      ],
+                      inverse_predicates: %AllPredicates{}
+                    } } ] },
+
       # // PUBLIC
       %GroupSpec{
         name: "public",
@@ -26,8 +41,6 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://xmlns.com/foaf/0.1/Person",
-                        "http://xmlns.com/foaf/0.1/OnlineAccount",
                         "http://mu.semte.ch/vocabularies/ext/Expense",
                       ],
                       inverse_predicates: %AllPredicates{}
