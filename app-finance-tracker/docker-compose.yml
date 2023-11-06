@@ -16,8 +16,7 @@ services:
     volumes:
       - ./config/dispatcher:/config
   database:
-    platform: linux/amd64
-    image: semtech/mu-authorization:0.6.0-beta.5
+    image: mu-authorization:personal
     environment:
       MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
     volumes:
