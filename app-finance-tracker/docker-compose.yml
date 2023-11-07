@@ -47,7 +47,7 @@ services:
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/public"
   login:
     platform: linux/amd64
-    image: semtech/mu-login-service:3.0.0
+    image: mu-login-service:personal
     environment:
       USERS_GRAPH: "http://mu.semte.ch/graphs/public"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/public"
