@@ -44,6 +44,7 @@ defmodule Acl.UserGroups.Config do
                         "http://xmlns.com/foaf/0.1/Person",
                         "http://xmlns.com/foaf/0.1/OnlineAccount",
                         "http://mu.semte.ch/vocabularies/ext/Expense",
+                        "http://mu.semte.ch/vocabularies/ext/Role",
                       ],
                       inverse_predicates: %AllPredicates{}
                     } } ] },

@@ -11,4 +11,6 @@ export default class UseraccountModel extends Model {
 
   @belongsTo('user', { async: true, inverse: 'accounts' }) user;
   @hasMany('expense', { async: true, inverse: 'user' }) expenses;
+
+  @hasMany('role', { async: true, inverse: 'accounts' }) roles;
 }

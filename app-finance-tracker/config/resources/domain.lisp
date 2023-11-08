@@ -29,9 +29,20 @@
               :inverse t
               :as "user"))
   :has-many `((expense :via ,(s-prefix "ext:expense")
-               :as "expenses"))
+               :as "expenses")
+              (role :via ,(s-prefix "ext:role")
+              :as "roles"))
   :resource-base (s-url "http://mu.semte.ch/services/registration-service/accounts/")
 :on-path "useraccounts")
+
+(define-resource role ()
+  :class (s-prefix "ext:Role")
+  :properties `((:rolename :string ,(s-prefix "ext:name")))
+  :has-many `((useraccount :via ,(s-prefix "ext:role")
+              :inverse t
+              :as "accounts"))
+  :resource-base (s-url "http://finance-tracker/roles/")
+:on-path "roles")
 
 (define-resource expense ()
   :class (s-prefix "ext:Expense")
