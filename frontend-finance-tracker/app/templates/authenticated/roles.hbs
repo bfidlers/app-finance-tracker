@@ -1,0 +1,18 @@
+<h3>Setup roles</h3>
+
+<ul>
+    {{#each @model as |role|}}
+    <li>
+        {{role.rolename}}
+        <button type="button" {{on "click" (fn this.removeRole role)}}>Remove</button>
+    </li>
+    {{/each}}
+</ul>
+
+<div>Create role</div>
+<form {{on "submit" this.addRole}}>
+    <Input @value={{this.name}} />
+    <button type="submit">Add role</button>
+</form>
+
+{{outlet}}

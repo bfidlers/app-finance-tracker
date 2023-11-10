@@ -13,6 +13,7 @@ Router.map(function () {
 
   this.route('authenticated', { path: '' }, function () {
     this.route('admin');
+    this.route('roles');
     this.route('settings');
     this.route('expenses');
   });
