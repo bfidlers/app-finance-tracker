@@ -18,5 +18,6 @@ Router.map(function () {
     this.route('expenses');
   });
 
+  this.route('permission-denied');
   this.route('404', { path: '/*path' });
 });
