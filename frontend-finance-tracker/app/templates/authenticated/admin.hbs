@@ -1,24 +1,2 @@
-<h3>Setup roles</h3>
-
-<ul>
-    {{#each @model as |account|}}
-    <li>
-        {{account.accountname}}
-        <ul>
-            {{#each account.roles as |role|}}
-            <li>
-                {{role.rolename}}
-                <button type="button" {{on "click" (fn this.removeRole account role)}}>Remove</button>
-            </li>
-            {{/each}}
-        </ul>
-        <form {{on "submit" (fn this.addRole account)}}>
-            <Input id={{account.accountname}} />
-            <button type="submit">Add role</button>
-        </form>
-
-    </li>
-    {{/each}}
-</ul>
-
+<div>This page should only be accessible to accounts with the admin role.</div>
 {{outlet}}

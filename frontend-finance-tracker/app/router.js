@@ -12,8 +12,10 @@ Router.map(function () {
   this.route('login');
 
   this.route('authenticated', { path: '' }, function () {
-    this.route('admin');
-    this.route('roles');
+    this.route('admin', { path: 'admin' }, function () {
+      this.route('roles');
+      this.route('accountroles');
+    });
     this.route('settings');
     this.route('expenses');
   });
