@@ -20,11 +20,11 @@ A checkbox for your solution. Let's assume you make duperdap
     - [x] has an app-duperdap mu-project
     - [x] has a frontend-duperdap frontend in EmberJS
     - [x] uses ember-data in the frontend
-    - [ ] uses omnipresent microservices:
+    - [x] uses omnipresent microservices:
       - [x] identifier
       - [x] dispatcher
       - [x] resource
-      - [ ] mu-authorization
+      - [x] mu-authorization
       - [x] virtuoso
       - [x] migrations
     - [ ] includes at least one custom microservice
