@@ -1,0 +1,17 @@
+PREFIX migrations: <http://mu.semte.ch/vocabularies/migrations/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+DELETE {
+    GRAPH <http://mu.semte.ch/application> {
+            ?subject rdf:type migrations:Migration ;
+                     migrations:filename ?filename ;
+                     migrations:executedAt ?time .
+    }
+}
+WHERE {
+    GRAPH <http://mu.semte.ch/application> {
+        ?subject rdf:type migrations:Migration ;
+                 migrations:filename ?filename ;
+                 migrations:executedAt ?time .
+    }
+}
