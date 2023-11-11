@@ -40,3 +40,10 @@ services:
     image: semtech/mu-login-service:3.0.0
     links:
       - database:database
+  migrations:
+    platform: linux/amd64
+    image: semtech/mu-migrations-service:0.9.0
+    links:
+      - database:database
+    volumes:
+      - ./config/migrations:/data/migrations
