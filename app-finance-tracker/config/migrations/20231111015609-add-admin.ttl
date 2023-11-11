@@ -1,0 +1,16 @@
+      @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+      @prefix dct: <http://purl.org/dc/terms/> .
+      @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+      @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+      @prefix account: <http://mu.semte.ch/vocabularies/account/> .
+
+      <http://mu.semte.ch/services/registration-service/accounts/654ed1860e515a000c000005>
+            rdf:type foaf:OnlineAccount ;
+            dct:created '2023-11-11T00:57:42Z' ;
+            dct:modified '2023-11-11T00:57:42Z' ;
+            foaf:accountName "admin" ;
+            mu:uuid "654ed1860e515a000c000005" ;
+            account:password "$2a$12$NyeOrnwRH4TE/INbJJfYZeJFXdMAzUkH178IyZ.N6lSwgb0oQcb7q" ;
+            account:salt "e6e22a9400ca014875e51c4c589a90f7" ;
+            account:status <http://mu.semte.ch/vocabularies/account/status/active> .
+
