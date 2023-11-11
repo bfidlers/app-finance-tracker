@@ -1,0 +1,9 @@
+      @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+      @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+      @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+
+      <http://finance-tracker/roles/654EB97812B3ADA157C79C31>
+            rdf:type ext:Role ;
+            mu:uuid "654EB97812B3ADA157C79C31" ;
+            ext:name "admin" .
+
