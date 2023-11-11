@@ -26,10 +26,10 @@ A checkbox for your solution. Let's assume you make duperdap
       - [x] resource
       - [ ] mu-authorization
       - [x] virtuoso
-      - [ ] migrations
+      - [x] migrations
     - [ ] includes at least one custom microservice
     - [x] uses mu-cl-resources for generic API
-    - [ ] uses migrations-service for seed data
+    - [x] uses migrations-service for seed data
     - [ ] includes docker-compose.yml that could be used as production setup
     - [ ] includes docker-compose.dev.yml for development overrides (eg: publish port 80 of identifier, 8890 of Virtuoso)
     - [ ] has woodpecker builds for the frontend and custom services
