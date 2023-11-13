@@ -29,6 +29,12 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://login/sessions/"
   end
 
+  match "/stats/*path", @any do
+    Proxy.forward conn, path, "http://stats/"
+  end
+
+  # RESOURCES
+
   match "/expenses/*path" do
     Proxy.forward conn, path, "http://resource/expenses/"
   end
@@ -44,6 +50,8 @@ defmodule Dispatcher do
   match "/roles/*path" do
     Proxy.forward conn, path, "http://resource/roles/"
   end
+
+  # Page not found
 
   match "/*_", %{ layer: :not_found } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
