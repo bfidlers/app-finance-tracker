@@ -60,3 +60,9 @@ services:
       - triplestore:database
     volumes:
       - ./config/migrations:/data/migrations
+  stats:
+    image: semtech/mu-javascript-template
+    environment:
+      NODE_ENV: "development"
+    volumes:
+      - ./stats/:/app/
