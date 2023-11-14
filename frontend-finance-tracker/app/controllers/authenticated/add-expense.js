@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
-export default class ExpensesController extends Controller {
+export default class AddExpenseController extends Controller {
   @tracked name = '';
   @tracked amount = '';
   @tracked date = this.currentdate();
