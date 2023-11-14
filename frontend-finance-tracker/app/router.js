@@ -17,7 +17,7 @@ Router.map(function () {
       this.route('accountroles');
     });
     this.route('settings');
-    this.route('expenses');
+    this.route('add-expense');
   });
 
   this.route('permission-denied');
