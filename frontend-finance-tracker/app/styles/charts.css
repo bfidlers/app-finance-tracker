@@ -1,12 +1,20 @@
 #my-chart {
     width: 100%;
-    max-width: 30%;
+    max-width: 40%;
     margin: 0 auto;
+    display: flex;
+    gap: 10%;
 }
 
-/* #my-chart .pie {
-    ...
-  }
-  #my-chart .legend {
-    ...
-  } */
+#my-chart .pie {
+    width: 40%;
+}
+
+#my-chart .columns {
+    width: 60%;
+}
+
+#my-chart .legend {
+    width: 40%;
+    margin: auto;
+}

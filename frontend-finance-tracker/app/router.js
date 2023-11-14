@@ -18,7 +18,8 @@ Router.map(function () {
     });
     this.route('settings');
     this.route('expenses');
-    this.route('stats');
+    this.route('stats-column');
+    this.route('stats-pie');
   });
 
   this.route('permission-denied');

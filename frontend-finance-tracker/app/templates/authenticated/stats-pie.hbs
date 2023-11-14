@@ -1,0 +1,49 @@
+<div id="my-chart">
+
+    <table class="charts-css pie show-heading show-labels show-data-on-hover">
+
+        <caption> Chart Heading </caption>
+
+        <thead>
+            <tr>
+                <th scope="col"> Year </th>
+                <th scope="col"> Value </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th> 2016 </th>
+                <td style="--start: 0.0; --end: calc( 20 / 300 );"> <span class="data"> 20 </span></td>
+            </tr>
+            <tr>
+                <th> 2017 </th>
+                <td style="--start: calc( 20 / 300 ); --end: calc( 60 / 300 );"> <span class="data"> 40 </span> </td>
+            </tr>
+            <tr>
+                <th> 2018 </th>
+                <td style="--start: calc( 60 / 300 ); --end: calc( 120 / 300 );"> <span class="data"> 60</span></td>
+            </tr>
+            <tr>
+                <th> 2019 </th>
+                <td style="--start: calc( 120 / 300 ); --end: calc( 200 / 300 );"> <span class="data"> 80 </span> </td>
+            </tr>
+            <tr>
+                <th> 2020 </th>
+                <td style="--start: calc( 200 / 300 ); --end: 1.0;"> <span class="data"> 100 </span> </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <ul class="charts-css legend legend-rectangle">
+        <li> Label 1 </li>
+        <li> Label 2 </li>
+        <li> Label 3 </li>
+        <li> Label 4 </li>
+        <li> Label 5 </li>
+    </ul>
+
+</div>
+
+{{outlet}}
