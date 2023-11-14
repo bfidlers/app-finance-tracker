@@ -1,38 +1,41 @@
-<table
-    class="charts-css column show-heading show-labels show-primary-axis show-4-secondary-axes show-data-axes data-spacing-15 hide-data">
+<div id="my-chart">
 
-    <caption> Chart Heading </caption>
+    <table class="charts-css column show-heading show-labels show-primary-axis data-spacing-15 show-data-on-hover">
 
-    <thead>
-        <tr>
-            <th scope="col"> Year </th>
-            <th scope="col"> Value </th>
-        </tr>
-    </thead>
+        <caption> Chart Heading </caption>
 
-    <tbody>
-        <tr>
-            <th> 2016 </th>
-            <td style="--size: calc( 20 / 100 );"> 20 </td>
-        </tr>
-        <tr>
-            <th> 2017 </th>
-            <td style="--size: calc( 40 / 100 );"> 40 </td>
-        </tr>
-        <tr>
-            <th> 2018 </th>
-            <td style="--size: calc( 60 / 100 );"> 60 </td>
-        </tr>
-        <tr>
-            <th> 2019 </th>
-            <td style="--size: calc( 80 / 100 );"> 80 </td>
-        </tr>
-        <tr>
-            <th> 2020 </th>
-            <td style="--size: calc( 100 / 100 );"> 100 </td>
-        </tr>
-    </tbody>
+        <thead>
+            <tr>
+                <th scope="col"> Year </th>
+                <th scope="col"> Value </th>
+            </tr>
+        </thead>
 
-</table>
+        <tbody>
+            <tr>
+                <th> 2016 </th>
+                <td style="--size: calc( 20 / 100 );"> <span class="data"> 20 </span></td>
+            </tr>
+            <tr>
+                <th> 2017 </th>
+                <td style="--size: calc( 40 / 100 );"> <span class="data"> 40 </span> </td>
+            </tr>
+            <tr>
+                <th> 2018 </th>
+                <td style="--size: calc( 60 / 100 );"> <span class="data"> 60</span></td>
+            </tr>
+            <tr>
+                <th> 2019 </th>
+                <td style="--size: calc( 80 / 100 );"> <span class="data"> 80 </span> </td>
+            </tr>
+            <tr>
+                <th> 2020 </th>
+                <td style="--size: calc( 100 / 100 );"> <span class="data"> 100 </span> </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
 
 {{outlet}}
