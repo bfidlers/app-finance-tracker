@@ -6,7 +6,6 @@ export default class ExpenseRoute extends Route {
   @service session;
 
   model(params) {
-    console.log(params);
     let id = this.session.data.authenticated.data.relationships.account.data.id;
 
     let options = {
