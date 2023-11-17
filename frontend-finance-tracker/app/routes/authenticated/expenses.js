@@ -19,6 +19,9 @@ export default class ExpenseRoute extends Route {
     if (params.payment_method) options['filter[payment-method]'] = params.payment_method;
     if (params.location) options['filter[location]'] = params.location;
 
+    if (params.price_min) options['filter[:gte:amount]'] = params.price_min;
+    if (params.price_max) options['filter[:lte:amount]'] = params.price_max;
+
     return this.store.query('expense', options);
   }
 }
