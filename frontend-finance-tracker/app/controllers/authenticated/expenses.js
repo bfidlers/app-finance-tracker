@@ -7,6 +7,9 @@ export default class ExpensesController extends Controller {
     'category',
     'payment_method',
     'location',
+
+    'price_min',
+    'price_max',
   ];
 
   name = null;
@@ -14,4 +17,7 @@ export default class ExpensesController extends Controller {
   category = null;
   payment_method = null;
   location = null;
+
+  price_min = null;
+  price_max = null;
 }
