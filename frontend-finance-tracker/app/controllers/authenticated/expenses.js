@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
 
 export default class ExpensesController extends Controller {
   queryParams = [
@@ -15,15 +16,15 @@ export default class ExpensesController extends Controller {
     'date_max',
   ];
 
-  name = null;
-  currency = null;
-  category = null;
-  payment_method = null;
-  location = null;
+  @tracked name = null;
+  @tracked currency = null;
+  @tracked category = null;
+  @tracked payment_method = null;
+  @tracked location = null;
 
-  price_min = null;
-  price_max = null;
+  @tracked price_min = null;
+  @tracked price_max = null;
 
-  date_min = null;
-  date_max = null;
+  @tracked date_min = null;
+  @tracked date_max = null;
 }

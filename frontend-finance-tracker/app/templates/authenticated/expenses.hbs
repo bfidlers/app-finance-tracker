@@ -1,4 +1,35 @@
 {{page-title "Expenses"}}
+
+<h3>Query parameters</h3>
+<div class="query_element">
+    <div class="query_element_child">name: </div> <Input class="query_element_child" @value={{this.name}} />
+</div>
+<div class="query_element">
+    <div class="query_element_child">currency: </div> <Input class="query_element_child" @value={{this.currency}} />
+</div>
+<div class="query_element">
+    <div class="query_element_child">location: </div> <Input class="query_element_child" @value={{this.location}} />
+</div>
+<div class="query_element">
+    <div class="query_element_child">minimum price: </div> <Input class="query_element_child"
+        @value={{this.price_min}} />
+</div>
+<div class="query_element">
+    <div class="query_element_child">maximum price: </div> <Input class="query_element_child"
+        @value={{this.price_max}} />
+</div>
+<div class="query_element">
+    <div class="query_element_child">after date: </div> <Input class="query_element_child" @type="date"
+        @value={{this.date_min}} />
+</div>
+<div class="query_element">
+    <div class="query_element_child">before date: </div> <Input class="query_element_child" @type="date"
+        @value={{this.date_max}} />
+</div>
+
+
+<h3>Overview of expenses</h3>
+
 <ul>
     {{#each @model as |expense|}}
     <li>
@@ -6,5 +37,6 @@
     </li>
     {{/each}}
 </ul>
+
 
 {{outlet}}

@@ -5,6 +5,20 @@ export default class ExpenseRoute extends Route {
   @service store;
   @service session;
 
+  queryParams = {
+    name: { refreshModel: true },
+    currency: { refreshModel: true },
+    category: { refreshModel: true },
+    payment_method: { refreshModel: true },
+    location: { refreshModel: true },
+
+    price_min: { refreshModel: true },
+    price_max: { refreshModel: true },
+
+    date_min: { refreshModel: true },
+    date_max: { refreshModel: true },
+  };
+
   model(params) {
     let id = this.session.data.authenticated.data.relationships.account.data.id;
 
