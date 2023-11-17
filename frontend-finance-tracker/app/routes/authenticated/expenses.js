@@ -21,6 +21,9 @@ export default class ExpenseRoute extends Route {
     if (params.price_min) options['filter[:gte:amount]'] = params.price_min;
     if (params.price_max) options['filter[:lte:amount]'] = params.price_max;
 
+    if (params.date_min) options['filter[:gte:date]'] = params.date_min;
+    if (params.date_max) options['filter[:lte:date]'] = params.date_max;
+
     return this.store.query('expense', options);
   }
 }
