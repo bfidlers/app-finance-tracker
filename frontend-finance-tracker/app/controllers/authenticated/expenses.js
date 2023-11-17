@@ -10,6 +10,9 @@ export default class ExpensesController extends Controller {
 
     'price_min',
     'price_max',
+
+    'date_min',
+    'date_max',
   ];
 
   name = null;
@@ -20,4 +23,7 @@ export default class ExpensesController extends Controller {
 
   price_min = null;
   price_max = null;
+
+  date_min = null;
+  date_max = null;
 }
