@@ -12,7 +12,6 @@ export default class ExpenseRoute extends Route {
       'filter[user][:id:]': id,
     };
 
-    console.log(params)
     if (params.name) options['filter[name]'] = params.name;
     if (params.currency) options['filter[currency]'] = params.currency;
     if (params.category) options['filter[category]'] = params.category;
