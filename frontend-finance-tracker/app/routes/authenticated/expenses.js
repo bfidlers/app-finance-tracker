@@ -12,7 +12,12 @@ export default class ExpenseRoute extends Route {
       'filter[user][:id:]': id,
     };
 
+    console.log(params)
+    if (params.name) options['filter[name]'] = params.name;
+    if (params.currency) options['filter[currency]'] = params.currency;
     if (params.category) options['filter[category]'] = params.category;
+    if (params.payment_method) options['filter[payment-method]'] = params.payment_method;
+    if (params.location) options['filter[location]'] = params.location;
 
     return this.store.query('expense', options);
   }
