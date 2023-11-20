@@ -1,21 +1,21 @@
 import Controller from '@ember/controller';
 
 export default class StatsController extends Controller {
+  input = {
+    categories:
+      [
+        { category: 'label1', amount: 400 },
+        { category: 'label2', amount: 800 },
+        { category: 'label3', amount: 1200 },
+      ]
+  }
+
   data = {
-    labels: ['Red', 'Blue'],
+    labels: this.input.categories.map((elem) => elem.category),
     datasets: [
       {
         label: 'My First Dataset',
-        data: [
-          {
-            url: 'test1',
-            amount: { usd: 300, eur: 200 },
-          },
-          {
-            url: 'test2',
-            amount: { usd: 300, eur: 200 },
-          },
-        ],
+        data: this.input.categories,
         hoverOffset: 4,
       },
     ],
@@ -23,14 +23,14 @@ export default class StatsController extends Controller {
 
   options = {
     parsing: {
-      key: 'amount.usd',
+      key: 'amount',
     },
     onClick: (e, activeElements, chart) => {
       if (activeElements.length === 0) return;
 
       let index = activeElements[0].index;
 
-      console.log(chart.data.datasets[0].data[index].url)
+      // console.log(chart.data.datasets[0].data[index].url)
     }
   };
 }
