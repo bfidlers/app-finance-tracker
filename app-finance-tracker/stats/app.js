@@ -36,5 +36,5 @@ app.get('/overview', async function (req, res) {
     let data = {
         categories: result,
     };
-    res.send(data);
+    res.status(200).send(data);
 });
