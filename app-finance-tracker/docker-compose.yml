@@ -2,27 +2,25 @@ version: '3.4'
 
 services:
   identifier:
-    image: mu-identifier:none
+    image: semtech/mu-identifier:feature-arm64-build
     environment:
       SESSION_COOKIE_SECURE: "on"
       DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
     links:
       - dispatcher:dispatcher
   dispatcher:
-    platform: linux/amd64
     image: semtech/mu-dispatcher:2.1.0-beta.2
     links:
       - resource:resource
     volumes:
       - ./config/dispatcher:/config
   database:
-    image: mu-authorization:personal
+    image: semtech/mu-authorization:feature-arm64-build
     environment:
       MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
     volumes:
       - ./config/authorization:/config
   triplestore:
-    platform: linux/amd64
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
@@ -31,14 +29,12 @@ services:
       - ./data/db:/data
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini
   resource:
-    platform: linux/amd64
     image: semtech/mu-cl-resources:feature-arm64-builds
     links:
       - database:database
     volumes:
       - ./config/resources:/config
   registration:
-    platform: linux/amd64
     image: semtech/mu-registration-service:2.7.3
     links:
       - database:database
@@ -46,22 +42,20 @@ services:
       USERS_GRAPH: "http://mu.semte.ch/graphs/public"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/public"
   login:
-    platform: linux/amd64
-    image: mu-login-service:personal
+    image: benfidlers/mu-login-service:v0.1
     environment:
       USERS_GRAPH: "http://mu.semte.ch/graphs/public"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/public"
     links:
       - database:database
   migrations:
-    platform: linux/amd64
     image: semtech/mu-migrations-service:0.9.0
     links:
       - triplestore:database
     volumes:
       - ./config/migrations:/data/migrations
   stats:
-    image: semtech/mu-javascript-template
+    image: semtech/mu-javascript-template:feature-node-20-upgrade
     environment:
       NODE_ENV: "development"
     volumes:

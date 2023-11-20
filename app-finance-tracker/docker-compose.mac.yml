@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  identifier:
+    image: mu-identifier:none
+  dispatcher:
+    platform: linux/amd64
+  database:
+    image: mu-authorization:personal
+  triplestore:
+    platform: linux/amd64
+  resource:
+    platform: linux/amd64
+  registration:
+    platform: linux/amd64
+  migrations:
+    platform: linux/amd64
+  stats:
+    platform: linux/amd64
