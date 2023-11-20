@@ -19,6 +19,7 @@ Router.map(function () {
     this.route('settings');
     this.route('add-expense');
     this.route('expenses');
+    this.route('stats');
   });
 
   this.route('permission-denied');

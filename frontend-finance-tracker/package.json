@@ -29,6 +29,7 @@
     "@babel/eslint-parser": "^7.22.15",
     "@babel/plugin-proposal-decorators": "^7.22.15",
     "@ember/optional-features": "^2.0.0",
+    "@ember/render-modifiers": "^2.1.0",
     "@ember/string": "^3.1.1",
     "@ember/test-helpers": "^3.2.0",
     "@glimmer/component": "^1.1.2",
@@ -81,6 +82,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "chart.js": "^4.4.0",
     "jquery": "^3.7.1"
   }
 }
