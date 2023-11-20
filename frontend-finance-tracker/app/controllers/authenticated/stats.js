@@ -1,6 +1,9 @@
 import Controller from '@ember/controller';
+import { service } from '@ember/service';
 
 export default class StatsController extends Controller {
+  @service router;
+
   constructor() {
     super(...arguments);
 
@@ -14,7 +17,11 @@ export default class StatsController extends Controller {
 
         let index = activeElements[0].index;
 
-        // console.log(chart.data.datasets[0].data[index].url)
+        this.router.transitionTo('authenticated.expenses', {
+          queryParams: {
+            category: chart.data.datasets[0].data[index].category
+          }
+        });
       }
     };
   }
