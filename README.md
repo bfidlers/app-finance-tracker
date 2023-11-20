@@ -30,8 +30,8 @@ A checkbox for your solution. Let's assume you make duperdap
     - [x] includes at least one custom microservice
     - [x] uses mu-cl-resources for generic API
     - [x] uses migrations-service for seed data
-    - [ ] includes docker-compose.yml that could be used as production setup
-    - [ ] includes docker-compose.dev.yml for development overrides (eg: publish port 80 of identifier, 8890 of Virtuoso)
+    - [x] includes docker-compose.yml that could be used as production setup
+    - [x] includes docker-compose.dev.yml for development overrides (eg: publish port 80 of identifier, 8890 of Virtuoso)
     - [ ] has woodpecker builds for the frontend and custom services
 
 An approach forward
