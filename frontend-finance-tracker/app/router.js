@@ -12,7 +12,7 @@ Router.map(function () {
   this.route('login');
 
   this.route('authenticated', { path: '' }, function () {
-    this.route('admin', { path: 'admin' }, function () {
+    this.route('admin', function () {
       this.route('roles');
       this.route('accountroles');
     });

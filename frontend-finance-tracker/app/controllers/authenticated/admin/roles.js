@@ -14,7 +14,6 @@ export default class RolesController extends Controller {
 
     let role = this.store.createRecord('role', {
       rolename: this.name,
-
     });
     role.save();
   }

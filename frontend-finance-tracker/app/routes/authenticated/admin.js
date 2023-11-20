@@ -6,7 +6,9 @@ export default class AdminRoute extends Route {
   @service router;
 
   beforeModel(transition) {
-    if (!this.session.data.authenticated.data.attributes.roles.includes("admin")) {
+    if (
+      !this.session.data.authenticated.data.attributes.roles.includes('admin')
+    ) {
       this.router.transitionTo('permission-denied');
     }
   }

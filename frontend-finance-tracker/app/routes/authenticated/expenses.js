@@ -29,7 +29,8 @@ export default class ExpenseRoute extends Route {
     if (params.name) options['filter[name]'] = params.name;
     if (params.currency) options['filter[currency]'] = params.currency;
     if (params.category) options['filter[category]'] = params.category;
-    if (params.payment_method) options['filter[payment-method]'] = params.payment_method;
+    if (params.payment_method)
+      options['filter[payment-method]'] = params.payment_method;
     if (params.location) options['filter[location]'] = params.location;
 
     if (params.price_min) options['filter[:gte:amount]'] = params.price_min;

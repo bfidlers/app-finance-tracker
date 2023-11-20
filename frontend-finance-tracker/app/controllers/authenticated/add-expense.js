@@ -13,41 +13,38 @@ export default class AddExpenseController extends Controller {
   @tracked currency = 'EUR';
   @tracked location = '';
 
-  paymentMethods = [
-    "kaart",
-    "cash"
-  ];
+  paymentMethods = ['kaart', 'cash'];
 
   expenseCategories = [
-    "Groceries",
-    "Dining Out",
-    "Transportation",
-    "Utilities",
-    "Rent/Mortgage",
-    "Healthcare",
-    "Entertainment",
-    "Clothing",
-    "Home Maintenance",
-    "Electronics",
-    "Education",
-    "Insurance",
-    "Gifts",
-    "Donations",
-    "Travel",
-    "Childcare",
-    "Pet Care",
-    "Taxes",
-    "Savings",
-    "Investments",
-    "Fees and Subscriptions",
-    "Personal Care",
-    "Hobbies",
-    "Home Decor",
-    "Office Supplies",
-    "Automotive",
-    "Loans/Debt Repayment",
-    "Miscellaneous"
-  ]
+    'Groceries',
+    'Dining Out',
+    'Transportation',
+    'Utilities',
+    'Rent/Mortgage',
+    'Healthcare',
+    'Entertainment',
+    'Clothing',
+    'Home Maintenance',
+    'Electronics',
+    'Education',
+    'Insurance',
+    'Gifts',
+    'Donations',
+    'Travel',
+    'Childcare',
+    'Pet Care',
+    'Taxes',
+    'Savings',
+    'Investments',
+    'Fees and Subscriptions',
+    'Personal Care',
+    'Hobbies',
+    'Home Decor',
+    'Office Supplies',
+    'Automotive',
+    'Loans/Debt Repayment',
+    'Miscellaneous',
+  ];
 
   @service store;
   @service session;
@@ -68,16 +65,15 @@ export default class AddExpenseController extends Controller {
       modified: new Date().toISOString(),
     });
 
-    if (!this.emptyString(this.description)) expense.description = this.description;
+    if (!this.emptyString(this.description))
+      expense.description = this.description;
     if (!this.emptyString(this.location)) expense.location = this.location;
 
     let id = this.session.data.authenticated.data.relationships.account.data.id;
-    this.store
-      .findRecord('useraccount', id)
-      .then((useraccount) => {
-        expense.user = useraccount;
-        expense.save();
-      });
+    this.store.findRecord('useraccount', id).then((useraccount) => {
+      expense.user = useraccount;
+      expense.save();
+    });
 
     // clear the input fields
     this.name = '';
