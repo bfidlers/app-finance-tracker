@@ -27,7 +27,7 @@ A checkbox for your solution. Let's assume you make duperdap
       - [x] mu-authorization
       - [x] virtuoso
       - [x] migrations
-    - [ ] includes at least one custom microservice
+    - [x] includes at least one custom microservice
     - [x] uses mu-cl-resources for generic API
     - [x] uses migrations-service for seed data
     - [ ] includes docker-compose.yml that could be used as production setup
